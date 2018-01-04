@@ -4,13 +4,13 @@
     define('textAngular', ["rangy","rangy/lib/rangy-selectionsaverestore"], function (a0,b1) {
       return (root['textAngular.name'] = factory(a0,b1));
     });
-  } else if (typeof exports === 'object') {
+  } else if (typeof module === 'object' && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
     module.exports = factory(require("rangy"),require("rangy/lib/rangy-selectionsaverestore"));
   } else {
-    root['textAngular'] = factory(rangy);
+    root['textAngular'] = factory(root["rangy"]);
   }
 }(this, function (rangy) {
 
@@ -3285,6 +3285,7 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
                                         var tagName = dom[0].childNodes[i].tagName.toLowerCase();
                                         if(tagName !== 'p' &&
                                             tagName !== 'ul' &&
+                                            tagName !== 'ol' &&
                                             tagName !== 'h1' &&
                                             tagName !== 'h2' &&
                                             tagName !== 'h3' &&

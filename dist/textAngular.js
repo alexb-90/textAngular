@@ -2255,6 +2255,7 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
                                         var tagName = dom[0].childNodes[i].tagName.toLowerCase();
                                         if(tagName !== 'p' &&
                                             tagName !== 'ul' &&
+                                            tagName !== 'ol' &&
                                             tagName !== 'h1' &&
                                             tagName !== 'h2' &&
                                             tagName !== 'h3' &&
