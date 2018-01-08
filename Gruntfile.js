@@ -14,10 +14,10 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-git');
 	grunt.loadNpmTasks('grunt-shell');
 	
-	grunt.registerTask('compile', ['concat', 'jshint', 'uglify']);
-	grunt.registerTask('default', ['compile', 'test']);
-	grunt.registerTask('test', ['clean', 'jshint', 'karma', 'coverage']);
-	grunt.registerTask('travis-test', ['concat', 'jshint', 'karma', 'coverage', 'coveralls']);
+	grunt.registerTask('compile', ['concat', 'uglify']);
+	grunt.registerTask('default', ['compile']);
+	grunt.registerTask('test', ['clean', 'karma', 'coverage']);
+	grunt.registerTask('travis-test', ['concat', 'karma', 'coverage', 'coveralls']);
 	
 	grunt.registerTask('release', ['bump-only','compile','changelog','gitcommit','bump-commit', 'shell:publish']);
 	grunt.registerTask('release:patch', ['bump-only:patch','compile','changelog','gitcommit','bump-commit', 'shell:publish']);
